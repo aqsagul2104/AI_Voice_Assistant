@@ -118,9 +118,10 @@ if __name__ == "__main__":
                 say("Sorry, I don't know that website")
 
         elif "the time" in query:
-            hour = datetime.datetime.now().strftime("%H")
-            minute = datetime.datetime.now().strftime("%M")
-            say(f"Sir, the time is {hour} hours and {minute} minutes")
+    hour = datetime.datetime.now().strftime("%I")  # 12-hour format (01-12)
+    minute = datetime.datetime.now().strftime("%M")  # Minutes (00-59)
+    am_pm = datetime.datetime.now().strftime("%p")  # AM/PM
+    say(f"Sir, the time is {hour} {minute} {am_pm}")
 
         elif "see you later" in query:
             say("Until next time, bye!")
